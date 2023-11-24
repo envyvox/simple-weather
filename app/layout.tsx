@@ -26,7 +26,7 @@ export const viewport: Viewport = {
   ],
 };
 
-export const fontSans = FontSans({
+const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
