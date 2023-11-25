@@ -1,18 +1,18 @@
-import { getCurrentWeather } from "@/lib/weather";
+import CurrentDay from "@/components/current-day";
+import ForecastDay from "@/components/forecast-day";
+import { getForecastWeather } from "@/lib/weather";
 
 export default async function Home() {
-  const data = await getCurrentWeather();
+  const data = await getForecastWeather();
+
   return (
-    <main className="flex flex-col p-24 space-y-2">
-      <h1 className="scroll-m-20 text-5xl font-extrabold tracking-tight">
-        {data.location.name}
-      </h1>
-      <h4 className="scroll-m-20 text-xl tracking-tight">
-        {data.current.condition.text}
-      </h4>
-      <span className="text-9xl font-extrabold tracking-tight">
-        {Math.round(data.current.temp_c)}°
-      </span>
+    <main className="flex flex-col p-24 space-y-2 select-none">
+      <CurrentDay locationName={data.location.name} currentDay={data.current} />
+      <div className="flex gap-5 flex-wrap">
+        {data.forecast.forecastday.map((day) => (
+          <ForecastDay key={day.date_epoch.toString()} forecastDay={day} />
+        ))}
+      </div>
     </main>
   );
 }
