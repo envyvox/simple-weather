@@ -1,7 +1,7 @@
 "use client";
 
 import CurrentDay from "@/components/current-day";
-import ForecastDay from "@/components/forecast-day";
+import Forecast from "@/components/forecast";
 import LocationPicker from "@/components/location-picker";
 import { locations } from "@/lib/locations";
 import { getForecastWeather } from "@/lib/weather";
@@ -11,15 +11,18 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [location, setLocation] = useState("kyiv");
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     const loc = locations.find(
       (x) => x.value.toLowerCase() === location.toLowerCase()
     )!;
-    getForecastWeather(loc.lat, loc.long).then((data) => setWeatherData(data));
+    getForecastWeather(loc.lat, loc.long).then((data) => {
+      setWeatherData(data);
+      setLoading(false);
+    });
   }, [location]);
-
-  if (weatherData === null) return <></>;
 
   return (
     <main className="flex flex-col p-24 space-y-2 select-none">
@@ -27,15 +30,16 @@ export default function Home() {
       <CurrentDay
         locationName={
           locations.find((loc) => loc.value === location)?.label ??
-          weatherData.location.name
+          weatherData?.location.name ??
+          ""
         }
-        currentDay={weatherData.current}
+        currentDay={weatherData?.current}
+        loading={loading}
       />
-      <div className="flex gap-5 flex-wrap">
-        {weatherData.forecast.forecastday.map((day) => (
-          <ForecastDay key={day.date_epoch.toString()} forecastDay={day} />
-        ))}
-      </div>
+      <Forecast
+        forecastDays={weatherData?.forecast.forecastday}
+        loading={loading}
+      />
     </main>
   );
 }
