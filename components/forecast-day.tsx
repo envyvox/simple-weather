@@ -21,6 +21,7 @@ export default function ForecastDay({ forecastDay }: Props) {
       <CardHeader>
         <CardTitle>
           {date.toLocaleDateString("uk-UA", {
+            weekday: 'long',
             day: "numeric",
             month: "long",
           })}
