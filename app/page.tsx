@@ -25,7 +25,7 @@ export default function Home() {
   }, [location]);
 
   return (
-    <main className="flex flex-col p-24 space-y-2 select-none">
+    <main className="container py-6 flex flex-col gap-5">
       <LocationPicker location={location} setLocation={setLocation} />
       <CurrentDay
         locationName={

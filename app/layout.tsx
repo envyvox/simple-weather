@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -27,7 +27,7 @@ export const viewport: Viewport = {
 };
 
 const fontSans = FontSans({
-  subsets: ["latin"],
+  subsets: ["cyrillic"],
   variable: "--font-sans",
 });
 
@@ -41,10 +41,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <html lang="en" suppressHydrationWarning>
         <head />
         <body className={cn("font-sans antialiased", fontSans.variable)}>
-          <div className="absolute top-0 left-0 w-full min-h-screen bg-gradient-to-bl from-[#5FC3E4] to-[#E55D87] rounded-md filter blur-3xl opacity-50 -z-50" />
           <div className="relative flex flex-col">
-            <Header />
-            <div className="flex-1">{children}</div>
+            <div className="flex-1 min-h-[93vh]">{children}</div>
+            <Footer />
           </div>
           <TailwindIndicator />
         </body>

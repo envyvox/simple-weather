@@ -8,14 +8,14 @@ const apiKey = process.env.WEATHER_API_KEY as string;
  * @param location Location
  * @param lat Latitude
  * @param lon Longitude
- * @param days Number of days of weather forecast. Value ranges from 1 to 10. Default value - 7
+ * @param days Number of days of weather forecast. Value ranges from 1 to 10. Default value - 3
  * @param aqi Get air quality data. Default value - no
  * @param alerts Get weather alert data. Default value - no
  */
 export async function getForecastWeather(
   lat: number,
   lon: number,
-  days: number = 7,
+  days: number = 3,
   aqi: boolString = "no",
   alerts: boolString = "no"
 ): Promise<WeatherData> {

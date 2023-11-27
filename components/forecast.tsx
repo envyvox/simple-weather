@@ -12,13 +12,9 @@ export default function Forecast({ forecastDays, loading }: Props) {
     <div className="flex gap-5 flex-wrap">
       {loading ? (
         <>
-          <Skeleton className="w-[160px] h-[168px]" />
-          <Skeleton className="w-[160px] h-[168px]" />
-          <Skeleton className="w-[160px] h-[168px]" />
-          <Skeleton className="w-[160px] h-[168px]" />
-          <Skeleton className="w-[160px] h-[168px]" />
-          <Skeleton className="w-[160px] h-[168px]" />
-          <Skeleton className="w-[160px] h-[168px]" />
+          <Skeleton className="flex-1 h-[300px]" />
+          <Skeleton className="flex-1 h-[300px]" />
+          <Skeleton className="flex-1 h-[300px]" />
         </>
       ) : (
         forecastDays?.map((day) => (

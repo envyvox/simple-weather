@@ -4,6 +4,15 @@ const nextConfig = {
     WEATHER_API_URL: process.env.WEATHER_API_URL,
     WEATHER_API_KEY: process.env.WEATHER_API_KEY,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.weatherapi.com",
+        pathname: "**",
+      },
+    ],
+  },
   async headers() {
     return [
       {
