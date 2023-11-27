@@ -1,12 +1,5 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Forecastday } from "@/typings";
-import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
 
 type Props = {
@@ -27,7 +20,7 @@ export default function ForecastDay({ forecastDay }: Props) {
             month: "long",
           })}
         </CardTitle>
-        <CardDescription className="flex justify-between items-end">
+        <CardDescription className="flex justify-between items-baseline">
           <div>
             <Image
               src={`https:${forecastDay.day.condition.icon}`}
