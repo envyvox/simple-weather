@@ -9,16 +9,17 @@ type Props = {
 };
 
 export default function ForecastHours({ forecastHours, loading }: Props) {
+  const array = Array.from({ length: 24 }, (_, index) => index);
   return (
     <ScrollArea className="whitespace-nowrap">
       <div className="flex w-max gap-5 pb-5">
-        {loading ? (
-          <Skeleton></Skeleton>
-        ) : (
-          forecastHours?.map((hour) => (
-            <ForecastHour key={hour.time_epoch} forecastHour={hour} />
-          ))
-        )}
+        {loading
+          ? array.map((x) => (
+              <Skeleton key={x} className="w-[99px] h-[185px]" />
+            ))
+          : forecastHours?.map((hour) => (
+              <ForecastHour key={hour.time_epoch} forecastHour={hour} />
+            ))}
       </div>
       <ScrollBar orientation="horizontal" />
     </ScrollArea>
