@@ -1,7 +1,8 @@
 import ForecastHour from "./forecast-hour";
-import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 import { Skeleton } from "./ui/skeleton";
+import { Draggable } from "@/components/draggable";
 import { Forecasthour } from "@/typings";
+import { useRef } from "react";
 
 type Props = {
   forecastHours: Forecasthour[] | undefined;
@@ -10,18 +11,19 @@ type Props = {
 
 export default function ForecastHours({ forecastHours, loading }: Props) {
   const array = Array.from({ length: 24 }, (_, index) => index);
+  const ref = useRef(null);
+
   return (
-    <ScrollArea className="whitespace-nowrap">
-      <div className="flex w-max gap-5 pb-5">
+    <Draggable innerRef={ref} rootClass={"drag"}>
+      <div className="flex flex-row overflow-x-hidden w-full gap-5" ref={ref}>
         {loading
           ? array.map((x) => (
-              <Skeleton key={x} className="w-[99px] h-[185px]" />
+              <Skeleton key={x} className="min-w-[100px] h-[185px]" />
             ))
           : forecastHours?.map((hour) => (
               <ForecastHour key={hour.time_epoch} forecastHour={hour} />
             ))}
       </div>
-      <ScrollBar orientation="horizontal" />
-    </ScrollArea>
+    </Draggable>
   );
 }
