@@ -9,14 +9,14 @@ import { WeatherData } from "@/typings";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [location, setLocation] = useState("kyiv");
+  const [location, setLocation] = useState("Київ");
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
     const loc = locations.find(
-      (x) => x.value.toLowerCase() === location.toLowerCase()
+      (x) => x.label.toLowerCase() === location.toLowerCase()
     )!;
     getForecastWeather(loc.lat, loc.long).then((data) => {
       setWeatherData(data);
@@ -29,7 +29,9 @@ export default function Home() {
       <LocationPicker location={location} setLocation={setLocation} />
       <CurrentDay
         locationName={
-          locations.find((loc) => loc.value === location)?.label ??
+          locations.find(
+            (loc) => loc.label.toLowerCase() === location.toLowerCase()
+          )?.label ??
           weatherData?.location.name ??
           ""
         }

@@ -31,7 +31,11 @@ export default function LocationPicker({ location, setLocation }: Props) {
           aria-expanded={open}
           className="w-[300px] justify-between"
         >
-          {locations.find((loc) => loc.value === location)?.label}
+          {
+            locations.find(
+              (loc) => loc.label.toLowerCase() === location.toLowerCase()
+            )?.label
+          }
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -44,7 +48,7 @@ export default function LocationPicker({ location, setLocation }: Props) {
               {locations.map((loc) => (
                 <CommandItem
                   key={loc.value}
-                  value={loc.value}
+                  value={loc.label}
                   onSelect={(currentValue) => {
                     setLocation(
                       currentValue === location ? "kyiv" : currentValue
@@ -56,7 +60,7 @@ export default function LocationPicker({ location, setLocation }: Props) {
                   <Check
                     className={cn(
                       "mr-2 h-4 w-4",
-                      location === loc.value ? "opacity-100" : "opacity-0"
+                      location === loc.label ? "opacity-100" : "opacity-0"
                     )}
                   />
                   {loc.label}
