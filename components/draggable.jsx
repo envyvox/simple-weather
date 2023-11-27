@@ -1,15 +1,14 @@
 import {useRef, useState} from 'react';
 
-export const Draggable = ({ innerRef, rootClass = "", children }) => {
+export const Draggable = ({ rootClass = "", children }) => {
   const ourRef = useRef(null);
   const [isMouseDown, setIsMouseDown] = useState(false);
   const mouseCoords = useRef({
     startX: 0,
     startY: 0,
-    scrollLeft: 0, 
+    scrollLeft: 0,
     scrollTop: 0,
   });
-  const [isScrolling, setIsScrolling] = useState(false);
   const handleDragStart = (e) => {
     if (!ourRef.current) return;
     const slider = ourRef.current.children[0];
