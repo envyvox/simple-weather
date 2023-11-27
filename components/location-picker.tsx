@@ -51,7 +51,7 @@ export default function LocationPicker({ location, setLocation }: Props) {
                   value={loc.label}
                   onSelect={(currentValue) => {
                     setLocation(
-                      currentValue === location ? "kyiv" : currentValue
+                      currentValue === location ? "Київ" : currentValue
                     );
                     setOpen(false);
                   }}
@@ -60,7 +60,9 @@ export default function LocationPicker({ location, setLocation }: Props) {
                   <Check
                     className={cn(
                       "mr-2 h-4 w-4",
-                      location === loc.label ? "opacity-100" : "opacity-0"
+                      location.toLowerCase() === loc.label.toLowerCase()
+                        ? "opacity-100"
+                        : "opacity-0"
                     )}
                   />
                   {loc.label}
