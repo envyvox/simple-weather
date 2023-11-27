@@ -15,22 +15,18 @@ export default function CurrentDay({
   return (
     <div className="flex flex-col gap-3">
       <h1 className="text-5xl font-extrabold tracking-tight">
-        {loading ? (
-          <Skeleton className="h-[48px] w-[300px] opacity-50" />
-        ) : (
-          locationName
-        )}
+        {loading ? <Skeleton className="h-[48px] w-[500px]" /> : locationName}
       </h1>
       <h4 className="text-xl tracking-tight">
         {loading ? (
-          <Skeleton className="h-[28px] w-[300px] opacity-50" />
+          <Skeleton className="h-[28px] w-[400px]" />
         ) : (
           currentDay?.condition.text
         )}
       </h4>
       <span className="text-9xl font-extrabold tracking-tight">
         {loading ? (
-          <Skeleton className="h-[128px] w-[300px] opacity-50" />
+          <Skeleton className="h-[128px] w-[120px]" />
         ) : (
           `${Math.round(currentDay?.temp_c as number)}°`
         )}
