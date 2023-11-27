@@ -20,7 +20,7 @@ export async function getForecastWeather(
   alerts: boolString = "no"
 ): Promise<WeatherData> {
   const res = await fetch(
-    `${apiUrl}/forecast.json?key=${apiKey}&q=${lat},${lon}&days=${days}&aqi=${aqi}&alerts=${alerts}`,
+    `${apiUrl}/forecast.json?key=${apiKey}&q=${lat},${lon}&days=${days}&aqi=${aqi}&alerts=${alerts}&lang=uk`,
     {
       next: { revalidate: 600 },
     }
