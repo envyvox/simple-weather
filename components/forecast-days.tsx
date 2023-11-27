@@ -4,10 +4,17 @@ import { Forecastday } from "@/typings";
 
 type Props = {
   forecastDays: Forecastday[] | undefined;
+  selectedDay: Forecastday | undefined;
+  setSelectedDay: React.Dispatch<React.SetStateAction<Forecastday | undefined>>;
   loading: boolean;
 };
 
-export default function ForecastDays({ forecastDays, loading }: Props) {
+export default function ForecastDays({
+  forecastDays,
+  selectedDay,
+  setSelectedDay,
+  loading,
+}: Props) {
   return (
     <div className="flex gap-5 flex-wrap">
       {loading ? (
@@ -18,7 +25,12 @@ export default function ForecastDays({ forecastDays, loading }: Props) {
         </>
       ) : (
         forecastDays?.map((day) => (
-          <ForecastDay key={day.date_epoch} forecastDay={day} />
+          <ForecastDay
+            key={day.date_epoch}
+            forecastDay={day}
+            selectedDay={selectedDay}
+            setSelectedDay={setSelectedDay}
+          />
         ))
       )}
     </div>

@@ -6,13 +6,14 @@ import ForecastHours from "@/components/forecast-hours";
 import LocationPicker from "@/components/location-picker";
 import { locations } from "@/lib/locations";
 import { getForecastWeather } from "@/lib/weather";
-import { WeatherData } from "@/typings";
+import { Forecastday, WeatherData } from "@/typings";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [location, setLocation] = useState("Київ");
-  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
+  const [weatherData, setWeatherData] = useState<WeatherData>();
   const [loading, setLoading] = useState(true);
+  const [selectedDay, setSelectedDay] = useState<Forecastday>();
 
   useEffect(() => {
     setLoading(true);
@@ -22,6 +23,10 @@ export default function Home() {
     getForecastWeather(loc.lat, loc.long).then((data) => {
       setWeatherData(data);
       setLoading(false);
+
+      if (selectedDay === undefined) {
+        setSelectedDay(data.forecast.forecastday[0]);
+      }
     });
   }, [location]);
 
@@ -41,13 +46,11 @@ export default function Home() {
       />
       <ForecastDays
         forecastDays={weatherData?.forecast.forecastday}
+        selectedDay={selectedDay}
+        setSelectedDay={setSelectedDay}
         loading={loading}
       />
-      <ForecastHours
-        // TODO: change [0] to selected day
-        forecastHours={weatherData?.forecast.forecastday[0].hour}
-        loading={loading}
-      />
+      <ForecastHours forecastHours={selectedDay?.hour} loading={loading} />
     </main>
   );
 }

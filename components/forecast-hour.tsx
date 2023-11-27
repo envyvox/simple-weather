@@ -11,7 +11,7 @@ export default function ForecastHour({ forecastHour }: Props) {
   const date = new Date(0);
   date.setUTCSeconds(forecastHour.time_epoch);
   return (
-    <Card className="flex-1">
+    <Card className="min-w-[120px]">
       <CardHeader className="flex items-center">
         <CardTitle className="text-base">
           {forecastHour.time.slice(-5)}

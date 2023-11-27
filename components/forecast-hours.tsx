@@ -16,7 +16,7 @@ export default function ForecastHours({ forecastHours, loading }: Props) {
       <div className="flex flex-row w-full gap-5">
         {loading
           ? array.map((x) => (
-              <Skeleton key={x} className="min-w-[100px] h-[185px]" />
+              <Skeleton key={x} className="min-w-[120px] h-[185px]" />
             ))
           : forecastHours?.map((hour) => (
               <ForecastHour key={hour.time_epoch} forecastHour={hour} />
