@@ -7,7 +7,7 @@ type Props = {
   loading: boolean;
 };
 
-export default function Forecast({ forecastDays, loading }: Props) {
+export default function ForecastDays({ forecastDays, loading }: Props) {
   return (
     <div className="flex gap-5 flex-wrap">
       {loading ? (
@@ -18,7 +18,7 @@ export default function Forecast({ forecastDays, loading }: Props) {
         </>
       ) : (
         forecastDays?.map((day) => (
-          <ForecastDay key={day.date_epoch.toString()} forecastDay={day} />
+          <ForecastDay key={day.date_epoch} forecastDay={day} />
         ))
       )}
     </div>

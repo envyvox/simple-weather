@@ -1,7 +1,8 @@
 "use client";
 
 import CurrentDay from "@/components/current-day";
-import Forecast from "@/components/forecast";
+import ForecastDays from "@/components/forecast-days";
+import ForecastHours from "@/components/forecast-hours";
 import LocationPicker from "@/components/location-picker";
 import { locations } from "@/lib/locations";
 import { getForecastWeather } from "@/lib/weather";
@@ -38,8 +39,13 @@ export default function Home() {
         currentDay={weatherData?.current}
         loading={loading}
       />
-      <Forecast
+      <ForecastDays
         forecastDays={weatherData?.forecast.forecastday}
+        loading={loading}
+      />
+      <ForecastHours
+        // TODO: change [0] to selected day
+        forecastHours={weatherData?.forecast.forecastday[0].hour}
         loading={loading}
       />
     </main>

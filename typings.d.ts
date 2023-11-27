@@ -96,7 +96,7 @@ export type Forecastday = {
   /**See astro element*/
   astro: Astro;
   /**See hour element*/
-  hour: Hour[];
+  hour: Forecasthour[];
 };
 
 export type Day = {
@@ -159,7 +159,7 @@ export type Astro = {
   is_sun_up: number;
 };
 
-export type Hour = {
+export type Forecasthour = {
   time_epoch: number;
   time: string;
   temp_c: number;
