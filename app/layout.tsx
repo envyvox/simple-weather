@@ -40,7 +40,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <>
       <html lang="en" suppressHydrationWarning>
         <head />
-        <body className={cn("font-sans antialiased", fontSans.variable)}>
+        <body
+          className={cn(
+            "font-sans antialiased bg-gradient-to-bl from-[#fff1eb] to-[#ace0f9]",
+            fontSans.variable
+          )}
+        >
           <div className="relative flex flex-col">
             <div className="flex-1 min-h-[93vh]">{children}</div>
             <Footer />
