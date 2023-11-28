@@ -49,6 +49,10 @@ export const useWeatherDataStore = create<WeatherDataState>((set) => ({
 
     setLoading(true);
 
+    const getLocation = useLocationStore.getState().getLocation;
+
+    getLocation();
+
     const location = useLocationStore.getState().location;
     const locationObject = locations.find(
       (x) => x.label.toLowerCase() === location.toLowerCase()
@@ -57,12 +61,12 @@ export const useWeatherDataStore = create<WeatherDataState>((set) => ({
       locationObject.lat,
       locationObject.long
     );
+
     set({ weatherData });
 
     const setSelectedDay = useSelectedDayStore.getState().setSelectedDay;
 
     setSelectedDay(weatherData.forecast.forecastday[0]);
-
     setLoading(false);
   },
   setWeatherData: (weatherData: WeatherData) => set({ weatherData }),

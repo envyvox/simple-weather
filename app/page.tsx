@@ -10,11 +10,9 @@ import { useEffect } from "react";
 
 export default function Home() {
   const location = useLocationStore((state) => state.location);
-  const getLocation = useLocationStore((state) => state.getLocation);
   const getWeatherData = useWeatherDataStore((state) => state.getWeatherData);
 
   useEffect(() => {
-    getLocation();
     getWeatherData();
   }, [location]);
 

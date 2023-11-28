@@ -13,38 +13,37 @@ export default function ForecastDay({ forecastDay }: Props) {
   const setSelectedDay = useSelectedDayStore((state) => state.setSelectedDay);
   const isSelected = forecastDay.date_epoch === selectedDay?.date_epoch;
   const date = new Date(0);
+
   date.setUTCSeconds(forecastDay.date_epoch);
 
   return (
     <Card
       className={cn(
-        "flex-1 hover:cursor-pointer hover:border-[#a4c2fe] transition-colors",
+        "flex-1 hover:cursor-pointer hover:border-[#a4c2fe] transition-colors min-h-[150px]",
         isSelected ? "border border-[#a4c2fe]" : "border border-transparent"
       )}
       onClick={() => setSelectedDay(forecastDay)}
     >
-      <CardHeader>
-        <CardTitle>
+      <CardHeader className="h-full">
+        <CardTitle className="flex items-center justify-between">
           {date.toLocaleDateString("uk-UA", {
             weekday: "long",
             day: "numeric",
             month: "long",
           })}
+          <Image
+            src={`https:${forecastDay.day.condition.icon}`}
+            alt="condition icon"
+            width={50}
+            height={50}
+            className="h-[50px]"
+          />
         </CardTitle>
-        <CardDescription className="flex justify-between items-baseline">
-          <div>
-            <Image
-              src={`https:${forecastDay.day.condition.icon}`}
-              alt="condition icon"
-              width={50}
-              height={50}
-              className="h-[50px]"
-            />
-            {forecastDay.day.condition.text}
-          </div>
-          <div>
-            Середня температура {""}
-            <span className="text-3xl font-extrabold tracking-tight">
+        <CardDescription className="h-full flex items-end justify-between">
+          {forecastDay.day.condition.text}
+          <div className="flex text-right items-end">
+            Середня температура
+            <span className="text-3xl font-extrabold tracking-tight ml-2">
               {Math.round(forecastDay.day.avgtemp_c)}°
             </span>
           </div>
