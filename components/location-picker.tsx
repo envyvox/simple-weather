@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "./ui/button";
 import {
   Command,
@@ -12,15 +10,13 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { ScrollArea } from "./ui/scroll-area";
 import { locations } from "@/lib/locations";
 import { cn } from "@/lib/utils";
+import { useLocationStore } from "@/store/store";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { useState } from "react";
 
-type Props = {
-  location: string;
-  setLocation: React.Dispatch<React.SetStateAction<string>>;
-};
-
-export default function LocationPicker({ location, setLocation }: Props) {
+export default function LocationPicker() {
+  const location = useLocationStore((state) => state.location);
+  const setLocation = useLocationStore((state) => state.setLocation);
   const [open, setOpen] = useState(false);
   return (
     <Popover open={open} onOpenChange={setOpen}>

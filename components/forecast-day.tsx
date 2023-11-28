@@ -1,19 +1,16 @@
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { cn } from "@/lib/utils";
+import { useSelectedDayStore } from "@/store/store";
 import { Forecastday } from "@/typings";
 import Image from "next/image";
 
 type Props = {
   forecastDay: Forecastday;
-  selectedDay: Forecastday | undefined;
-  setSelectedDay: React.Dispatch<React.SetStateAction<Forecastday | undefined>>;
 };
 
-export default function ForecastDay({
-  forecastDay,
-  selectedDay,
-  setSelectedDay,
-}: Props) {
+export default function ForecastDay({ forecastDay }: Props) {
+  const selectedDay = useSelectedDayStore((state) => state.selectedDay);
+  const setSelectedDay = useSelectedDayStore((state) => state.setSelectedDay);
   const isSelected = forecastDay.date_epoch === selectedDay?.date_epoch;
   const date = new Date(0);
   date.setUTCSeconds(forecastDay.date_epoch);

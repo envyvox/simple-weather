@@ -1,13 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Skeleton } from "./ui/skeleton";
-import { Day } from "@/typings";
+import { useLoadingStore, useSelectedDayStore } from "@/store/store";
 
-type Props = {
-  day: Day | undefined;
-  loading: boolean;
-};
+export default function Details() {
+  const loading = useLoadingStore((state) => state.loading);
+  const selectedDay = useSelectedDayStore((state) => state.selectedDay);
 
-export default function Details({ day, loading }: Props) {
   return (
     <div className="flex gap-5 flex-wrap">
       {loading ? (
@@ -31,7 +29,7 @@ export default function Details({ day, loading }: Props) {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-lg font-medium text-center">
-              {Math.round(day?.maxtemp_c as number)}°
+              {Math.round(selectedDay?.day.maxtemp_c as number)}°
             </CardContent>
           </Card>
           <Card className="flex flex-col flex-1 justify-center">
@@ -41,7 +39,7 @@ export default function Details({ day, loading }: Props) {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-lg font-medium text-center">
-              {Math.round(day?.mintemp_c as number)}°
+              {Math.round(selectedDay?.day.mintemp_c as number)}°
             </CardContent>
           </Card>
           <Card className="flex flex-col flex-1 justify-center">
@@ -51,7 +49,7 @@ export default function Details({ day, loading }: Props) {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-lg font-medium text-center">
-              {Math.round(day?.maxwind_kph as number)} км/г
+              {Math.round(selectedDay?.day.maxwind_kph as number)} км/г
             </CardContent>
           </Card>
           <Card className="flex flex-col flex-1 justify-center">
@@ -61,7 +59,7 @@ export default function Details({ day, loading }: Props) {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-lg font-medium text-center">
-              {Math.round(day?.totalprecip_mm as number)} мм
+              {Math.round(selectedDay?.day.totalprecip_mm as number)} мм
             </CardContent>
           </Card>
           <Card className="flex flex-col flex-1 justify-center">
@@ -71,7 +69,7 @@ export default function Details({ day, loading }: Props) {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-lg font-medium text-center">
-              {Math.round(day?.totalsnow_cm as number)} см
+              {Math.round(selectedDay?.day.totalsnow_cm as number)} см
             </CardContent>
           </Card>
           <Card className="flex flex-col flex-1 justify-center">
@@ -81,7 +79,7 @@ export default function Details({ day, loading }: Props) {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-lg font-medium text-center">
-              {Math.round(day?.avgvis_km as number)} км
+              {Math.round(selectedDay?.day.avgvis_km as number)} км
             </CardContent>
           </Card>
           <Card className="flex flex-col flex-1 justify-center">
@@ -91,7 +89,7 @@ export default function Details({ day, loading }: Props) {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-lg font-medium text-center">
-              {Math.round(day?.avghumidity as number)}%
+              {Math.round(selectedDay?.day.avghumidity as number)}%
             </CardContent>
           </Card>
           <Card className="flex flex-col flex-1 justify-center">
@@ -101,7 +99,7 @@ export default function Details({ day, loading }: Props) {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-lg font-medium text-center">
-              {Math.round(day?.daily_chance_of_rain as number)}%
+              {Math.round(selectedDay?.day.daily_chance_of_rain as number)}%
             </CardContent>
           </Card>
           <Card className="flex flex-col flex-1 justify-center">
@@ -111,7 +109,7 @@ export default function Details({ day, loading }: Props) {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-lg font-medium text-center">
-              {Math.round(day?.daily_chance_of_snow as number)}%
+              {Math.round(selectedDay?.day.daily_chance_of_snow as number)}%
             </CardContent>
           </Card>
         </>

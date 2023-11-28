@@ -1,5 +1,4 @@
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
-import { cn } from "@/lib/utils";
 import { Forecasthour } from "@/typings";
 import { Droplets } from "lucide-react";
 import Image from "next/image";
