@@ -27,7 +27,7 @@ export default function ForecastHour({ forecastHour }: Props) {
           </span>
           <div className="flex gap-2 items-center">
             <Droplets color="#a4c2fe" />
-            <span className="text-muted-foreground">
+            <span className="text-foreground">
               {Math.round(forecastHour.chance_of_rain)}%
             </span>
           </div>
