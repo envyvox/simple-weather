@@ -7,7 +7,7 @@ import ScrollContainer from "react-indiana-drag-scroll";
 export default function ForecastHours() {
   const loading = useLoadingStore((state) => state.loading);
   const selectedDay = useSelectedDayStore((state) => state.selectedDay);
-  const array = Array.from({ length: 24 }, (_, index) => index);
+  const array = Array.from({ length: 9 }, (_, index) => index);
   const now = new Date();
   const isToday = now.getDay() === new Date(selectedDay?.date!).getDay();
 
@@ -19,7 +19,6 @@ export default function ForecastHours() {
   return (
     <ScrollContainer>
       <div className="flex flex-row gap-5">
-        {/* TODO: for some reasons, scroll container doesn't work on first load (F5 refresh) */}
         {loading
           ? array.map((x) => (
               <Skeleton key={x} className="min-w-[120px] h-[185px]" />
