@@ -1,6 +1,7 @@
 "use client";
 
 import CurrentDay from "@/components/current-day";
+import ForecastDayDetails from "@/components/forecast-day-details";
 import ForecastDays from "@/components/forecast-days";
 import ForecastHours from "@/components/forecast-hours";
 import LocationPicker from "@/components/location-picker";
@@ -46,6 +47,7 @@ export default function Home() {
         loading={loading}
       />
       <ForecastHours forecastDay={selectedDay} loading={loading} />
+      <ForecastDayDetails day={selectedDay?.day} loading={loading} />
     </main>
   );
 }
