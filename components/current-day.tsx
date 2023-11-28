@@ -2,21 +2,17 @@ import { Skeleton } from "./ui/skeleton";
 import { Current } from "@/typings";
 
 type Props = {
-  locationName: string;
+  location: string;
   currentDay: Current | undefined;
   loading: boolean;
 };
 
-export default function CurrentDay({
-  locationName,
-  currentDay,
-  loading,
-}: Props) {
+export default function CurrentDay({ location, currentDay, loading }: Props) {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex flex-col gap-2">
-        <h1 className="text-5xl font-extrabold tracking-tight">
-          {loading ? <Skeleton className="h-[48px] w-[500px]" /> : locationName}
+        <h1 className="text-5xl font-extrabold tracking-tight capitalize">
+          {loading ? <Skeleton className="h-[48px] w-[500px]" /> : location}
         </h1>
         <h4 className="text-xl tracking-tight">
           {loading ? (

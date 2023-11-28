@@ -49,10 +49,8 @@ export default function LocationPicker({ location, setLocation }: Props) {
                 <CommandItem
                   key={loc.value}
                   value={loc.label}
-                  onSelect={(currentValue) => {
-                    setLocation(
-                      currentValue === location ? "Київ" : currentValue
-                    );
+                  onSelect={(value) => {
+                    setLocation(value);
                     setOpen(false);
                   }}
                   className="mr-3"

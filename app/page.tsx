@@ -22,11 +22,12 @@ export default function Home() {
     )!;
     getForecastWeather(loc.lat, loc.long).then((data) => {
       setWeatherData(data);
-      setLoading(false);
 
       if (selectedDay === undefined) {
         setSelectedDay(data.forecast.forecastday[0]);
       }
+
+      setLoading(false);
     });
   }, [location]);
 
@@ -34,13 +35,7 @@ export default function Home() {
     <main className="container py-6 flex flex-col gap-5">
       <LocationPicker location={location} setLocation={setLocation} />
       <CurrentDay
-        locationName={
-          locations.find(
-            (loc) => loc.label.toLowerCase() === location.toLowerCase()
-          )?.label ??
-          weatherData?.location.name ??
-          ""
-        }
+        location={location}
         currentDay={weatherData?.current}
         loading={loading}
       />
@@ -50,7 +45,7 @@ export default function Home() {
         setSelectedDay={setSelectedDay}
         loading={loading}
       />
-      <ForecastHours forecastHours={selectedDay?.hour} loading={loading} />
+      <ForecastHours forecastDay={selectedDay} loading={loading} />
     </main>
   );
 }

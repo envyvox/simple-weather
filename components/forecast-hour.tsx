@@ -1,4 +1,5 @@
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { cn } from "@/lib/utils";
 import { Forecasthour } from "@/typings";
 import { Droplets } from "lucide-react";
 import Image from "next/image";
@@ -8,10 +9,8 @@ type Props = {
 };
 
 export default function ForecastHour({ forecastHour }: Props) {
-  const date = new Date(0);
-  date.setUTCSeconds(forecastHour.time_epoch);
   return (
-    <Card className="min-w-[120px]">
+    <Card className={cn("min-w-[120px] relative")}>
       <CardHeader className="flex items-center">
         <CardTitle className="text-base">
           {forecastHour.time.slice(-5)}
