@@ -75,6 +75,7 @@
   }
 }
 
+/* Default background when dynamic background is off */
 .dynamic-bg-default {
   @apply from-[#fff1eb] to-[#ace0f9];
 }
