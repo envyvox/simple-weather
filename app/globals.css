@@ -106,7 +106,7 @@
 
 /* Patchy rain possible */
 .dynamic-bg-1063 {
-  @apply from-[#87CEEB] to-[#A9A9A9];
+  @apply from-[#87CEEB] to-[#A9A9A9] dark;
 }
 
 /* Patchy snow possible */
@@ -171,32 +171,32 @@
 
 /* Patchy light rain */
 .dynamic-bg-1180 {
-  @apply from-[#87CEEB] to-[#A9A9A9];
+  @apply from-[#87CEEB] to-[#A9A9A9] dark;
 }
 
 /* Light rain */
 .dynamic-bg-1183 {
-  @apply from-[#87CEEB] to-[#A9A9A9];
+  @apply from-[#87CEEB] to-[#A9A9A9] dark;
 }
 
 /* Moderate rain at times */
 .dynamic-bg-1186 {
-  @apply from-[#87CEEB] to-[#A9A9A9];
+  @apply from-[#87CEEB] to-[#A9A9A9] dark;
 }
 
 /* Moderate rain */
 .dynamic-bg-1189 {
-  @apply from-[#87CEEB] to-[#A9A9A9];
+  @apply from-[#87CEEB] to-[#A9A9A9] dark;
 }
 
 /* Heavy rain at times */
 .dynamic-bg-1192 {
-  @apply from-[#4682B4] to-[#A9A9A9];
+  @apply from-[#4682B4] to-[#A9A9A9] dark;
 }
 
 /* Heavy rain */
 .dynamic-bg-1195 {
-  @apply from-[#4682B4] to-[#A9A9A9];
+  @apply from-[#4682B4] to-[#A9A9A9] dark;
 }
 
 /* Light freezing rain */
@@ -286,7 +286,7 @@
 
 /* Moderate or heavy snow showers */
 .dynamic-bg-1258 {
-  @apply from-[#314755] to-[#26a0da];
+  @apply from-[#314755] to-[#26a0da] dark;
 }
 
 /* Light showers of ice pellets */

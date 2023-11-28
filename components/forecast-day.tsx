@@ -19,8 +19,8 @@ export default function ForecastDay({ forecastDay }: Props) {
   return (
     <Card
       className={cn(
-        "flex-1 hover:cursor-pointer hover:border-[#a4c2fe] transition-colors min-h-[150px]",
-        isSelected ? "border border-[#a4c2fe]" : "border border-transparent"
+        "flex-1 hover:cursor-pointer hover:border-[#a4c2fe] transition-colors min-h-[150px] border",
+        isSelected ? "border-[#a4c2fe]" : "border-transparent"
       )}
       onClick={() => setSelectedDay(forecastDay)}
     >
