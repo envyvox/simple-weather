@@ -10,7 +10,7 @@ type Props = {
 
 export default function ForecastHour({ forecastHour }: Props) {
   return (
-    <Card className={cn("min-w-[120px] relative")}>
+    <Card className="min-w-[120px] relative">
       <CardHeader className="flex items-center">
         <CardTitle className="text-base">
           {forecastHour.time.slice(-5)}

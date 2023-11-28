@@ -20,7 +20,8 @@ export default function ForecastHours({ forecastDay, loading }: Props) {
 
   return (
     <ScrollContainer>
-      <div className="flex flex-row w-full gap-5">
+      <div className="flex flex-row gap-5">
+        {/* TODO: for some reasons, scroll container doesn't work on first load (F5 refresh) */}
         {loading
           ? array.map((x) => (
               <Skeleton key={x} className="min-w-[120px] h-[185px]" />
