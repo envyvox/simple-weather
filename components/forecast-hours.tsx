@@ -1,6 +1,7 @@
 import ForecastHour from "./forecast-hour";
 import { Skeleton } from "./ui/skeleton";
-import { useLoadingStore, useSelectedDayStore } from "@/store/store";
+import { useLoadingStore } from "@/store/loading-store";
+import { useSelectedDayStore } from "@/store/selected-day-store";
 import ScrollContainer from "react-indiana-drag-scroll";
 
 export default function ForecastHours() {

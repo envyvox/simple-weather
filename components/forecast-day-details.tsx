@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Skeleton } from "./ui/skeleton";
-import { useLoadingStore, useSelectedDayStore } from "@/store/store";
+import { useLoadingStore } from "@/store/loading-store";
+import { useSelectedDayStore } from "@/store/selected-day-store";
 
 export default function Details() {
   const loading = useLoadingStore((state) => state.loading);

@@ -10,7 +10,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { ScrollArea } from "./ui/scroll-area";
 import { locations } from "@/lib/locations";
 import { cn } from "@/lib/utils";
-import { useLocationStore } from "@/store/store";
+import { useLocationStore } from "@/store/location-store";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { useState } from "react";
 

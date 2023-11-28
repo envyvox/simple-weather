@@ -1,6 +1,7 @@
 import ForecastDay from "./forecast-day";
 import { Skeleton } from "./ui/skeleton";
-import { useLoadingStore, useWeatherDataStore } from "@/store/store";
+import { useLoadingStore } from "@/store/loading-store";
+import { useWeatherDataStore } from "@/store/weather-data-store";
 
 export default function ForecastDays() {
   const loading = useLoadingStore((state) => state.loading);

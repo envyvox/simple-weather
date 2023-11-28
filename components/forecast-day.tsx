@@ -1,6 +1,6 @@
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { cn } from "@/lib/utils";
-import { useSelectedDayStore } from "@/store/store";
+import { useSelectedDayStore } from "@/store/selected-day-store";
 import { Forecastday } from "@/typings";
 import Image from "next/image";
 

@@ -1,5 +1,7 @@
 import { Skeleton } from "./ui/skeleton";
-import { useLoadingStore, useLocationStore, useWeatherDataStore } from "@/store/store";
+import { useLoadingStore } from "@/store/loading-store";
+import { useLocationStore } from "@/store/location-store";
+import { useWeatherDataStore } from "@/store/weather-data-store";
 
 export default function CurrentDay() {
   const loading = useLoadingStore((state) => state.loading);

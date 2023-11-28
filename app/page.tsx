@@ -1,24 +1,34 @@
 "use client";
 
 import CurrentDay from "@/components/current-day";
+import DynamicBackgroundToggle from "@/components/dynamic-background-toggle";
 import ForecastDayDetails from "@/components/forecast-day-details";
 import ForecastDays from "@/components/forecast-days";
 import ForecastHours from "@/components/forecast-hours";
 import LocationPicker from "@/components/location-picker";
-import { useLocationStore, useWeatherDataStore } from "@/store/store";
+import { useDynamicBackgroundStore } from "@/store/dynamic-background-store";
+import { useLocationStore } from "@/store/location-store";
+import { useWeatherDataStore } from "@/store/weather-data-store";
 import { useEffect } from "react";
 
 export default function Home() {
   const location = useLocationStore((state) => state.location);
   const getWeatherData = useWeatherDataStore((state) => state.getWeatherData);
+  const getDynamicBackgroundEnabled = useDynamicBackgroundStore(
+    (state) => state.getEnabled
+  );
 
   useEffect(() => {
+    getDynamicBackgroundEnabled();
     getWeatherData();
   }, [location]);
 
   return (
     <main className="container py-6 flex flex-col gap-5">
-      <LocationPicker />
+      <div className="flex justify-between">
+        <LocationPicker />
+        <DynamicBackgroundToggle />
+      </div>
       <CurrentDay />
       <ForecastDays />
       <ForecastHours />
