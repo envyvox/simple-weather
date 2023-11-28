@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -9,63 +9,63 @@
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
- 
+
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
- 
+
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
- 
+
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
- 
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
- 
+
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
- 
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
- 
+
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
- 
+
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
- 
+
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
- 
+
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
- 
+
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
- 
+
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
- 
+
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
- 
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
- 
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -73,4 +73,247 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.dynamic-bg-default {
+  @apply from-[#fff1eb] to-[#ace0f9];
+}
+/* Sunny */
+.dynamic-bg-1000 {
+  @apply from-[#87CEEB] to-[#FFD700];
+}
+
+/* Partly cloudy */
+.dynamic-bg-1003 {
+  @apply from-[#87CEEB] to-[#CCCCCC];
+}
+
+/* Cloudy */
+.dynamic-bg-1006 {
+  @apply from-[#808080] to-[#A9A9A9];
+}
+
+/* Overcast */
+.dynamic-bg-1009 {
+  @apply from-[#B0C4DE] to-[#A9A9A9];
+}
+
+/* Mist */
+.dynamic-bg-1030 {
+  @apply from-[#D3D3D3] to-[#C0C0C0];
+}
+
+/* Patchy rain possible */
+.dynamic-bg-1063 {
+  @apply from-[#87CEEB] to-[#A9A9A9];
+}
+
+/* Patchy snow possible */
+.dynamic-bg-1066 {
+  @apply from-[#F5F5F5] to-[#D3D3D3];
+}
+
+/* Patchy sleet possible */
+.dynamic-bg-1069 {
+  @apply from-[#F0F8FF] to-[#B0C4DE];
+}
+
+/* Patchy freezing drizzle possible */
+.dynamic-bg-1072 {
+  @apply from-[#F0F8FF] to-[#A9A9A9];
+}
+
+/* Thundery outbreaks possible */
+.dynamic-bg-1087 {
+  @apply from-[#7EC8E3] to-[#5F5F5F];
+}
+
+/* Blowing snow */
+.dynamic-bg-1114 {
+  @apply from-[#F5F5F5] to-[#A9A9A9];
+}
+
+/* Blizzard */
+.dynamic-bg-1117 {
+  @apply from-[#F8F8FF] to-[#A9A9A9];
+}
+
+/* Fog */
+.dynamic-bg-1135 {
+  @apply from-[#D3D3D3] to-[#C0C0C0];
+}
+
+/* Freezing fog */
+.dynamic-bg-1147 {
+  @apply from-[#D3D3D3] to-[#A9A9A9];
+}
+
+/* Patchy light drizzle */
+.dynamic-bg-1150 {
+  @apply from-[#F0F8FF] to-[#A9A9A9];
+}
+
+/* Light drizzle */
+.dynamic-bg-1153 {
+  @apply from-[#F0F8FF] to-[#A9A9A9];
+}
+
+/* Freezing drizzle */
+.dynamic-bg-1168 {
+  @apply from-[#E6E6FA] to-[#A9A9A9];
+}
+
+/* Heavy freezing drizzle */
+.dynamic-bg-1171 {
+  @apply from-[#D8BFD8] to-[#A9A9A9];
+}
+
+/* Patchy light rain */
+.dynamic-bg-1180 {
+  @apply from-[#87CEEB] to-[#A9A9A9];
+}
+
+/* Light rain */
+.dynamic-bg-1183 {
+  @apply from-[#87CEEB] to-[#A9A9A9];
+}
+
+/* Moderate rain at times */
+.dynamic-bg-1186 {
+  @apply from-[#87CEEB] to-[#A9A9A9];
+}
+
+/* Moderate rain */
+.dynamic-bg-1189 {
+  @apply from-[#87CEEB] to-[#A9A9A9];
+}
+
+/* Heavy rain at times */
+.dynamic-bg-1192 {
+  @apply from-[#4682B4] to-[#A9A9A9];
+}
+
+/* Heavy rain */
+.dynamic-bg-1195 {
+  @apply from-[#4682B4] to-[#A9A9A9];
+}
+
+/* Light freezing rain */
+.dynamic-bg-1198 {
+  @apply from-[#F0F8FF] to-[#A9A9A9];
+}
+
+/* Moderate or heavy freezing rain */
+.dynamic-bg-1201 {
+  @apply from-[#E6E6FA] to-[#A9A9A9];
+}
+
+/* Light sleet */
+.dynamic-bg-1204 {
+  @apply from-[#F0F8FF] to-[#A9A9A9];
+}
+
+/* Moderate or heavy sleet */
+.dynamic-bg-1207 {
+  @apply from-[#E6E6FA] to-[#A9A9A9];
+}
+
+/* Patchy light snow */
+.dynamic-bg-1210 {
+  @apply from-[#F8F8FF] to-[#A9A9A9];
+}
+
+/* Light snow */
+.dynamic-bg-1213 {
+  @apply from-[#F8F8FF] to-[#A9A9A9];
+}
+
+/* Patchy moderate snow */
+.dynamic-bg-1216 {
+  @apply from-[#F5F5F5] to-[#A9A9A9];
+}
+
+/* Moderate snow */
+.dynamic-bg-1219 {
+  @apply from-[#F5F5F5] to-[#A9A9A9];
+}
+
+/* Patchy heavy snow */
+.dynamic-bg-1222 {
+  @apply from-[#E6E6FA] to-[#A9A9A9];
+}
+
+/* Heavy snow */
+.dynamic-bg-1225 {
+  @apply from-[#E6E6FA] to-[#A9A9A9];
+}
+
+/* Ice pellets */
+.dynamic-bg-1237 {
+  @apply from-[#F0F8FF] to-[#A9A9A9];
+}
+
+/* Light rain shower */
+.dynamic-bg-1240 {
+  @apply from-[#87CEEB] to-[#A9A9A9];
+}
+
+/* Moderate or heavy rain shower */
+.dynamic-bg-1243 {
+  @apply from-[#4682B4] to-[#A9A9A9];
+}
+
+/* Torrential rain shower */
+.dynamic-bg-1246 {
+  @apply from-[#1E90FF] to-[#A9A9A9];
+}
+
+/* Light sleet showers */
+.dynamic-bg-1249 {
+  @apply from-[#F0F8FF] to-[#A9A9A9];
+}
+
+/* Moderate or heavy sleet showers */
+.dynamic-bg-1252 {
+  @apply from-[#E6E6FA] to-[#A9A9A9];
+}
+
+/* Light snow showers */
+.dynamic-bg-1255 {
+  @apply from-[#F8F8FF] to-[#A9A9A9];
+}
+
+/* Moderate or heavy snow showers */
+.dynamic-bg-1258 {
+  @apply from-[#314755] to-[#26a0da];
+}
+
+/* Light showers of ice pellets */
+.dynamic-bg-1261 {
+  @apply from-[#F0F8FF] to-[#A9A9A9];
+}
+
+/* Moderate or heavy showers of ice pellets */
+.dynamic-bg-1264 {
+  @apply from-[#E6E6FA] to-[#A9A9A9];
+}
+
+/* Patchy light rain with thunder */
+.dynamic-bg-1273 {
+  @apply from-[#4682B4] to-[#A9A9A9];
+}
+
+/* Moderate or heavy rain with thunder */
+.dynamic-bg-1276 {
+  @apply from-[#1E90FF] to-[#A9A9A9];
+}
+
+/* Patchy light snow with thunder */
+.dynamic-bg-1279 {
+  @apply from-[#F8F8FF] to-[#A9A9A9];
+}
+
+/* Moderate or heavy snow with thunder */
+.dynamic-bg-1282 {
+  @apply from-[#E6E6FA] to-[#A9A9A9];
 }

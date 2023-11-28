@@ -4,7 +4,6 @@ import "./globals.css";
 import { Footer } from "@/components/footer";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { siteConfig } from "@/config/site";
-import { defaultBgStyleFrom, defaultBgStyleTo } from "@/lib/conditions";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -43,10 +42,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <head />
         <body
           className={cn(
-            "font-sans antialiased bg-gradient-to-bl",
-            fontSans.variable,
-            defaultBgStyleFrom,
-            defaultBgStyleTo
+            "font-sans antialiased bg-gradient-to-bl dynamic-bg-default",
+            fontSans.variable
           )}
         >
           <div className="relative flex flex-col">

@@ -12,7 +12,7 @@ export default function DynamicBackgroundToggle() {
       pressed={enabled}
       onPressedChange={(value) => setEnabled(value)}
     >
-      <Zap />
+      <Zap color={enabled ? "#a4c2fe" : undefined} />
       <span className="ml-2">Динамічний фон (бета)</span>
     </Toggle>
   );
