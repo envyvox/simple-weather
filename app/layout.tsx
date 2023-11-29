@@ -42,7 +42,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <head />
         <body
           className={cn(
-            "font-sans antialiased bg-gradient-to-bl dynamic-bg-default",
+            "dynamic-bg-default bg-gradient-to-bl font-sans antialiased",
             fontSans.variable,
           )}
         >

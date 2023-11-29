@@ -9,7 +9,7 @@ type Props = {
 
 export default function ForecastHour({ forecastHour }: Props) {
   return (
-    <Card className="min-w-[120px] relative">
+    <Card className="relative min-w-[120px]">
       <CardHeader className="flex items-center">
         <CardTitle className="text-base">
           {forecastHour.time.slice(-5)}
@@ -25,7 +25,7 @@ export default function ForecastHour({ forecastHour }: Props) {
           <span className="text-2xl font-extrabold tracking-tight">
             {Math.round(forecastHour.temp_c)}°
           </span>
-          <div className="flex gap-2 items-center">
+          <div className="flex items-center gap-2">
             <Droplets />
             <span className="text-foreground">
               {Math.round(forecastHour.chance_of_rain)}%

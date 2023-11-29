@@ -24,7 +24,7 @@ export default function Home() {
   }, [location]);
 
   return (
-    <main className="container py-6 flex flex-col gap-5">
+    <main className="container flex flex-col gap-5 py-6">
       <div className="flex justify-between">
         <LocationPicker />
         <DynamicBackgroundToggle />

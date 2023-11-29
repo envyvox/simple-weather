@@ -11,7 +11,7 @@ export default function CurrentDay() {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex flex-col gap-2">
-        <h1 className="text-5xl font-extrabold tracking-tight capitalize">
+        <h1 className="text-5xl font-extrabold capitalize tracking-tight">
           {loading ? <Skeleton className="h-[48px] w-[500px]" /> : location}
         </h1>
         <h4 className="text-xl tracking-tight">

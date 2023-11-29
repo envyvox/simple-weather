@@ -8,12 +8,12 @@ export default function ForecastDays() {
   const weatherData = useWeatherDataStore((state) => state.weatherData);
 
   return (
-    <div className="flex gap-5 flex-wrap">
+    <div className="flex flex-wrap gap-5">
       {loading ? (
         <>
-          <Skeleton className="flex-1 h-[150px]" />
-          <Skeleton className="flex-1 h-[150px]" />
-          <Skeleton className="flex-1 h-[150px]" />
+          <Skeleton className="h-[150px] flex-1" />
+          <Skeleton className="h-[150px] flex-1" />
+          <Skeleton className="h-[150px] flex-1" />
         </>
       ) : (
         weatherData?.forecast.forecastday.map((day) => (

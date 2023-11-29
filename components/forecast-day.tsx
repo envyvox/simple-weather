@@ -19,7 +19,7 @@ export default function ForecastDay({ forecastDay }: Props) {
   return (
     <Card
       className={cn(
-        "flex-1 hover:cursor-pointer hover:border-[#a4c2fe] transition-colors min-h-[150px] border",
+        "min-h-[150px] flex-1 border transition-colors hover:cursor-pointer hover:border-[#a4c2fe]",
         isSelected ? "border-[#a4c2fe]" : "border-transparent",
       )}
       onClick={() => setSelectedDay(forecastDay)}
@@ -39,11 +39,11 @@ export default function ForecastDay({ forecastDay }: Props) {
             className="h-[50px]"
           />
         </CardTitle>
-        <CardDescription className="h-full flex items-end justify-between">
+        <CardDescription className="flex h-full items-end justify-between">
           {forecastDay.day.condition.text}
-          <div className="flex text-right items-end">
+          <div className="flex items-end text-right">
             Середня температура
-            <span className="text-3xl font-extrabold tracking-tight ml-2">
+            <span className="ml-2 text-3xl font-extrabold tracking-tight">
               {Math.round(forecastDay.day.avgtemp_c)}°
             </span>
           </div>
