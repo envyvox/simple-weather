@@ -28,3 +28,7 @@ You can get an API key by registering at https://www.weatherapi.com/, there is a
 ```sh
 npm run dev
 ```
+
+## License
+
+Licensed under the [MIT license](https://github.com/envyvox/simple-weather/blob/master/LICENSE).
