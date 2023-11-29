@@ -8,7 +8,7 @@ function Skeleton({
     <div
       className={cn(
         "animate-pulse rounded-md bg-background/20 backdrop-blur supports-[backdrop-filter]:bg-background/20",
-        className
+        className,
       )}
       {...props}
     />

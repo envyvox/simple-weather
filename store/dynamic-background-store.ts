@@ -14,7 +14,7 @@ export const useDynamicBackgroundStore = create<DynamicBackgroundState>(
     getEnabled: () => {
       // TODO: is this actually a good way to compare?
       const enabled = /true/i.test(
-        localStorage.getItem("dynamic-background-enabled") ?? "false"
+        localStorage.getItem("dynamic-background-enabled") ?? "false",
       );
       set({ enabled });
     },
@@ -31,5 +31,5 @@ export const useDynamicBackgroundStore = create<DynamicBackgroundState>(
         updateBackground(selectedDay?.day.condition.code, undefined);
       }
     },
-  })
+  }),
 );

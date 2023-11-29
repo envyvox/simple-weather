@@ -25,11 +25,11 @@ export const useWeatherDataStore = create<WeatherDataState>((set) => ({
 
     const location = useLocationStore.getState().location;
     const locationObject = locations.find(
-      (x) => x.label.toLowerCase() === location.toLowerCase()
+      (x) => x.label.toLowerCase() === location.toLowerCase(),
     )!;
     const weatherData = await getForecastWeather(
       locationObject.lat,
-      locationObject.long
+      locationObject.long,
     );
 
     set({ weatherData });

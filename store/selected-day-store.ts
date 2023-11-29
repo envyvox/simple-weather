@@ -14,7 +14,7 @@ export const useSelectedDayStore = create<SelectedDayState>((set, get) => ({
     set({ selectedDay });
     updateBackground(
       oldSelectedDay?.day.condition.code,
-      selectedDay.day.condition.code
+      selectedDay.day.condition.code,
     );
   },
 }));

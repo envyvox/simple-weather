@@ -15,7 +15,7 @@ export default function Home() {
   const location = useLocationStore((state) => state.location);
   const getWeatherData = useWeatherDataStore((state) => state.getWeatherData);
   const getDynamicBackgroundEnabled = useDynamicBackgroundStore(
-    (state) => state.getEnabled
+    (state) => state.getEnabled,
   );
 
   useEffect(() => {

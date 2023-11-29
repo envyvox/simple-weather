@@ -29,7 +29,7 @@ export default function LocationPicker() {
         >
           {
             locations.find(
-              (loc) => loc.label.toLowerCase() === location.toLowerCase()
+              (loc) => loc.label.toLowerCase() === location.toLowerCase(),
             )?.label
           }
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -56,7 +56,7 @@ export default function LocationPicker() {
                       "mr-2 h-4 w-4",
                       location.toLowerCase() === loc.label.toLowerCase()
                         ? "opacity-100"
-                        : "opacity-0"
+                        : "opacity-0",
                     )}
                   />
                   {loc.label}

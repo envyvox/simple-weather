@@ -2,7 +2,7 @@ import { useDynamicBackgroundStore } from "@/store/dynamic-background-store";
 
 export function updateBackground(
   oldConditionCode: number | undefined,
-  newConditionCode: number | undefined
+  newConditionCode: number | undefined,
 ) {
   const dynamicBackgroundEnabled = useDynamicBackgroundStore.getState().enabled;
 

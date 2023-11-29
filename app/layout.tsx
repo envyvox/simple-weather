@@ -43,7 +43,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <body
           className={cn(
             "font-sans antialiased bg-gradient-to-bl dynamic-bg-default",
-            fontSans.variable
+            fontSans.variable,
           )}
         >
           <div className="relative flex flex-col">

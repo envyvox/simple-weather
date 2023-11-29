@@ -12,7 +12,7 @@ export default function ForecastHours() {
   const isToday = now.getDay() === new Date(selectedDay?.date!).getDay();
 
   const hoursFromNow = selectedDay?.hour.filter(
-    (h) => new Date(h.time).getHours() >= now.getHours()
+    (h) => new Date(h.time).getHours() >= now.getHours(),
   );
   const displayedHours = isToday ? hoursFromNow : selectedDay?.hour;
 
