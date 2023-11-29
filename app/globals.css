@@ -81,7 +81,7 @@
 }
 /* Sunny */
 .dynamic-bg-1000 {
-  @apply from-[#87CEEB] to-[#FFD700];
+  @apply from-[#f19f62] to-[#ef855c];
 }
 
 /* Partly cloudy */
