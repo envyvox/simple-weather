@@ -1,5 +1,5 @@
 # Simple Weather
-An open source application build using nextjs, zustand and tailwindcss.
+An open source application build using [nextjs](https://nextjs.org/), [shadcn/ui](https://ui.shadcn.com/), [zustand](https://github.com/pmndrs/zustand) and [tailwindcss](https://tailwindcss.com/).
 
 Explore the weather forecast for Ukrainian cities over the next 3 days. Simple and user-friendly website, without unnecessary buttons, ads, and distractions.
 
