@@ -8,7 +8,12 @@ Explore the weather forecast for Ukrainian cities over the next 3 days. Simple a
 ## Features
 - 3 day forecast.
 - Hourly forecast navigation using horizontal scrolling with a simple left mouse button hold.
+
+![drag-scroll-demo](https://github.com/envyvox/simple-weather/assets/6567597/d9e1136b-4378-4feb-9271-c72b5b3e3701)
+
 - (beta) Toggleable dynamic background that changes based on weather conditions.
+
+![dynamic-background-demo](https://github.com/envyvox/simple-weather/assets/6567597/c9cdbe47-be17-4adb-9aca-b5bf5b1cb2be)
 
 ## Running Locally
 1. Install dependencies
