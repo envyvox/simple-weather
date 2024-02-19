@@ -47,7 +47,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <div className="relative flex flex-col">
-            <div className="flex-1">{children}</div>
+            <div className="min-h-[94vh] flex-1">{children}</div>
             <Footer />
           </div>
           <TailwindIndicator />

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="sticky bottom-0 z-40 w-full bg-background/20 backdrop-blur supports-[backdrop-filter]:bg-background/20">
+    <footer className="sticky bottom-0 z-40 min-h-[4vh] w-full bg-background/20 backdrop-blur supports-[backdrop-filter]:bg-background/20">
       <div className="container flex h-16 items-center">
         <p className="text-sm leading-loose text-foreground">
           Build by {""}
