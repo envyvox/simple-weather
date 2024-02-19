@@ -7,5 +7,6 @@ export const siteConfig = {
   links: {
     twitter: "https://twitter.com/envyvox",
     github: "https://github.com/envyvox/simple-weather",
+    buymecoffee: "https://www.buymeacoffee.com/envyvox",
   },
 };

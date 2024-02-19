@@ -20,6 +20,13 @@ export function Footer() {
           >
             GitHub
           </Link>
+          . You can support me on {""}
+          <Link
+            className="font-medium underline underline-offset-4"
+            href={siteConfig.links.buymecoffee}
+          >
+            Buy Me a Coffee
+          </Link>
           .
         </p>
       </div>
