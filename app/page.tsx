@@ -21,7 +21,7 @@ export default function Home() {
   useEffect(() => {
     getDynamicBackgroundEnabled();
     getWeatherData();
-  }, [location]);
+  }, [getDynamicBackgroundEnabled, getWeatherData, location]);
 
   return (
     <main className="container flex flex-col gap-5 py-6">
